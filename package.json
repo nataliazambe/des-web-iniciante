@@ -1,0 +1,15 @@
+{
+  "name": "des-web-iniciante",
+  "version": "1.0.0",
+  "description": "Repositório de projetos de desenvolvimento web iniciante em HTML, CSS e JS.",
+  "main": "livraria.js",
+  "scripts": {
+    "start": "node ./livraria.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
