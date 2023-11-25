@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="'style.css">
+  <title>Lista TODO</title>
+</head>
+
+<body>
+
+  <!-- Usar flexbox para tudo -->
+  <element class="container">
+
+    <div id="painel1"></div>
+
+    <div id="painel2">
+      <textarea id="txtarea" type="text">Deu certo!</textarea>
+      <button id="btn2">+</button>
+    </div>
+  </element>
+
+  <script>
+    const btn2 = document.getElementById("btn2");
+    //const btn1 = document.getElementById("btn1");
+
+    //+correto
+    var sla = document.getElementById("txtarea");
+
+    btn2.addEventListener("click", () => {
+      console.log(sla.value);//so no momento clique
+
+      const newDiv = document.createElement("div"); //criando um novo elemento div
+      newDiv.innerHTML = `<span>${sla.value}</span>`; //colocando no endereço da div as tags e o valor atualizado do textarea que quero adc e o botao
+      const newButton = document.createElement("button");
+      newButton.innerHTML = "x";
+      newDiv.appendChild(newButton);
+
+      var painel = document.getElementById("painel1");
+
+      painel.appendChild(newDiv);
+
+      newButton.addEventListener("click", () => {
+        painel.removeChild(newDiv); //so no momento do clique
+      })
+
+    });
+
+
+    /*Referência
+    na hr do clique o texto esta atualizado
+    btn2.addEventListener("click", () => {
+      var sla = document.getElementById("txtarea").value;
+      console.log(sla);*/
+
+  </script>
+
+</body>
+
+</html>
