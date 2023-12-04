@@ -4,22 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="'style.css">
+  <link rel="stylesheet" href="styles.css">
   <title>Lista TODO</title>
 </head>
 
 <body>
 
   <!-- Usar flexbox para tudo -->
-  <element class="container">
+  <div class="container">
 
-    <div id="painel1"></div>
+    <article>
 
-    <div id="painel2">
-      <textarea id="txtarea" type="text">Deu certo!</textarea>
-      <button id="btn2">+</button>
-    </div>
-  </element>
+      <div class="card">
+        <h2>TO DO LIST</h2>
+        <div id="painel1"></div>
+
+        <div id="painel2">
+          <textarea id="txtarea" type="text">Notes:</textarea>
+          <button id="btn2">+</button>
+        </div>
+
+      </div>
+
+    </article>
+
+  </div>
 
   <script>
     const btn2 = document.getElementById("btn2");
@@ -31,8 +40,9 @@
     btn2.addEventListener("click", () => {
       console.log(sla.value);//so no momento clique
 
-      const newDiv = document.createElement("div"); //criando um novo elemento div
-      newDiv.innerHTML = `<span>${sla.value}</span>`; //colocando no endereço da div as tags e o valor atualizado do textarea que quero adc e o botao
+      const newDiv = document.createElement("div");
+      newDiv.classList.add("item"); //criando um novo elemento div
+      newDiv.innerHTML = `<span class="text">${sla.value}</span>`; //colocando no endereço da div as tags e o valor atualizado do textarea que quero adc e o botao
       const newButton = document.createElement("button");
       newButton.innerHTML = "x";
       newDiv.appendChild(newButton);
