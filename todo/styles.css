@@ -1,0 +1,71 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid lightcyan;
+  width: 50%;
+  height: 50%;
+}
+
+#painel1 {
+  flex: 1; /*está sendo esticado para ocupar o espaço disponível do card*/
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+#painel2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+button {
+  margin: 10px;
+}
+
+h2 {
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  flex: 1;
+}
+
+#txtarea {
+  flex: 1;
+}
