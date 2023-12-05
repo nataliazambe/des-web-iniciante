@@ -1,10 +1,9 @@
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-flow: column;
+* {
+  font-family: "Poiret One", sans-serif;
+}
+
+body {
+  overflow: hidden;
 }
 
 header {
@@ -13,11 +12,44 @@ header {
 }
 
 article {
-  width: 70%;
+  width: 100%;
   height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+button {
+  margin: 10px;
+  font-size: 18px;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  padding: 3px 10px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  background-color: black;
+  border: none;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+a {
+  color: black;
+}
+
+.container {
+  width: 100dvw;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
 }
 
 .card {
@@ -27,12 +59,12 @@ article {
   gap: 20px;
   align-items: center;
   padding: 20px;
-  border: 1px solid lightcyan;
-  width: 50%;
+  border: 1px solid gray;
+  width: 20%;
   height: 50%;
 }
 
-#painel1 {
+#list {
   flex: 1; /*está sendo esticado para ocupar o espaço disponível do card*/
   display: flex;
   flex-flow: column;
@@ -42,7 +74,23 @@ article {
   overflow-x: hidden;
 }
 
-#painel2 {
+#list::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+#list::-webkit-scrollbar-track {
+  background-color: black;
+}
+
+#list::-webkit-scrollbar-thumb {
+  background-color: darkgray;
+}
+
+#list::-webkit-scrollbar-button {
+  display: none;
+}
+
+#input-todo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,22 +98,34 @@ article {
   width: 100%;
 }
 
-button {
-  margin: 10px;
-}
-
-h2 {
+.button:active {
+  background-color: darkgray;
+  transform: translate(3px);
 }
 
 .item {
   display: flex;
   align-items: center;
+  border: 1px solid gray;
+  padding: 5px;
+  margin-right: 15px;
 }
 
 .text {
   flex: 1;
+  font-size: 18px;
+  padding: 5px;
 }
 
 #txtarea {
   flex: 1;
+  padding: 10px;
+  font-size: 18px;
+}
+
+@media only screen and (max-device-width: 768px) {
+  .card {
+    width: 80%;
+    height: 80%;
+  }
 }
