@@ -5,65 +5,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Lista TODO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <title>To do list</title>
 </head>
 
 <body>
 
-  <!-- Usar flexbox para tudo -->
   <div class="container">
 
     <article>
 
       <div class="card">
         <h2>TO DO LIST</h2>
-        <div id="painel1"></div>
+        <div id="list"></div>
 
-        <div id="painel2">
-          <textarea id="txtarea" type="text">Notes:</textarea>
-          <button id="btn2">+</button>
+        <div id="input-todo">
+          <textarea id="txtarea" type="text" placeholder="NOTES..."></textarea>
+          <button class="button" id="btn-add">+</button>
         </div>
-
       </div>
+
+      <a href="https://github.com/nataliazambe" target="_blank">by Natalia Zambe</a>
 
     </article>
 
   </div>
 
   <script>
-    const btn2 = document.getElementById("btn2");
-    //const btn1 = document.getElementById("btn1");
+    const btnAdd = document.getElementById("btn-add");
 
-    //+correto
-    var sla = document.getElementById("txtarea");
+    var txtArea = document.getElementById("txtarea");
 
-    btn2.addEventListener("click", () => {
-      console.log(sla.value);//so no momento clique
+    btnAdd.addEventListener("click", () => {
 
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("item"); //criando um novo elemento div
-      newDiv.innerHTML = `<span class="text">${sla.value}</span>`; //colocando no endereço da div as tags e o valor atualizado do textarea que quero adc e o botao
-      const newButton = document.createElement("button");
-      newButton.innerHTML = "x";
-      newDiv.appendChild(newButton);
+      if (txtArea.value != '') {
+        console.log(txtArea.value);//so no momento clique
 
-      var painel = document.getElementById("painel1");
+        const newDiv = document.createElement("div");
+        newDiv.classList.add("item"); //criando um novo elemento div
+        newDiv.innerHTML = `<span class="text">${txtArea.value}</span>`; //colocando no endereço da div as tags e o valor atualizado do textarea que quero adc e o botao
 
-      painel.appendChild(newDiv);
+        const newButton = document.createElement("button");
+        newButton.innerHTML = "x";
+        newButton.classList.add("button");
 
-      newButton.addEventListener("click", () => {
-        painel.removeChild(newDiv); //so no momento do clique
-      })
+        newDiv.appendChild(newButton);
+
+        txtArea.value = '';
+
+        var list = document.getElementById("list");
+        list.appendChild(newDiv);
+
+        newButton.addEventListener("click", () => {
+          list.removeChild(newDiv); //so no momento do clique
+        })
+
+      } else {
+        alert("Error! Write a message before add!");
+      }
 
     });
-
-
-    /*Referência
-    na hr do clique o texto esta atualizado
-    btn2.addEventListener("click", () => {
-      var sla = document.getElementById("txtarea").value;
-      console.log(sla);*/
-
   </script>
 
 </body>
