@@ -65,7 +65,7 @@ a {
 }
 
 #list {
-  flex: 1; /*está sendo esticado para ocupar o espaço disponível do card*/
+  flex: 1;
   display: flex;
   flex-flow: column;
   gap: 10px;
