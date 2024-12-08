@@ -41,11 +41,10 @@
     btnAdd.addEventListener("click", () => {
 
       if (txtArea.value != '') {
-        console.log(txtArea.value);//so no momento clique
-
+        console.log(txtArea.value);
         const newDiv = document.createElement("div");
-        newDiv.classList.add("item"); //criando um novo elemento div
-        newDiv.innerHTML = `<span class="text">${txtArea.value}</span>`; //colocando no endereço da div as tags e o valor atualizado do textarea que quero adc e o botao
+        newDiv.classList.add("item");
+        newDiv.innerHTML = `<span class="text">${txtArea.value}</span>`;
 
         const newButton = document.createElement("button");
         newButton.innerHTML = "x";
@@ -59,7 +58,7 @@
         list.appendChild(newDiv);
 
         newButton.addEventListener("click", () => {
-          list.removeChild(newDiv); //so no momento do clique
+          list.removeChild(newDiv);
         })
 
       } else {
